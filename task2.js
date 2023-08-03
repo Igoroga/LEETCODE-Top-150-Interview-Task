@@ -11,6 +11,29 @@
 // The judge will test your solution with the following code:
 
 
-var removeElement = function(nums, val) {
+var removeElement = function (nums, val) {
+    let k = 0
     
+    let nums1 = nums.filter((a) => {
+        if (a == val) {
+            
+            return false
+        }
+        k +=1
+        return true
+    })
+
+    for (let i = 0; i < nums.length; i++) {
+         nums[i] = nums1[i] || 0;
+        
+    }
+    console.log(nums);
+
+    return k
 };
+
+const nums = [0, 1, 2, 2, 3, 0, 4, 2];
+const val = 2;
+
+const result = removeElement(nums, val);
+console.log(result); // Output: 5
